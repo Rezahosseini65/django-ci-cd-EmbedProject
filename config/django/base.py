@@ -18,6 +18,7 @@ LOCAL_APPS = [
     'devhub.common.apps.CommonConfig',
     'devhub.users.apps.UsersConfig',
     'devhub.authentication.apps.AuthenticationConfig',
+    'devhub.blog.apps.BlogConfig',
 ]
 
 THIRD_PARTY_APPS = [
