@@ -1,10 +1,10 @@
-# DevHub
+# devhub
 
 ## project setup
 
 1- compelete cookiecutter workflow (recommendation: leave project_slug empty) and go inside the project
 ```
-cd DevHub
+cd devhub
 ```
 
 2- SetUp venv

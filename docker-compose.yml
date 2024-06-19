@@ -8,7 +8,7 @@ services:
       - 5432:5432
     environment:
       - POSTGRES_DB=devhub
-      - POSTGRES_USER=user
+      - POSTGRES_USER=devhub
       - POSTGRES_PASSWORD=123@456
 
   rabbitmq:
@@ -27,7 +27,7 @@ services:
     container_name: django
     command: ./docker/web_entrypoint.sh
     environment:
-      - DATABASE_URL=psql://user:123@456@db:5432/devhub
+      - DATABASE_URL=psql://devhub:123@456@db:5432/devhub
       - CELERY_BROKER_URL=amqp://guest:guest@rabbitmq:5672//
     volumes:
       - .:/app
@@ -46,7 +46,7 @@ services:
     container_name: worker
     command: ./docker/celery_entrypoint.sh
     environment:
-      - DATABASE_URL=psql://user:123@456@db:5432/devhub
+      - DATABASE_URL=psql://devhub:123@456@db:5432/devhub
       - CELERY_BROKER_URL=amqp://guest:guest@rabbitmq:5672//
     volumes:
       - .:/app
@@ -63,7 +63,7 @@ services:
     container_name: beats
     command: ./docker/beats_entrypoint.sh
     environment:
-      - DATABASE_URL=psql://user:123@456@db:5432/devhub
+      - DATABASE_URL=psql://devhub:123@456@db:5432/devhub
       - CELERY_BROKER_URL=amqp://guest:guest@rabbitmq:5672//
     volumes:
       - .:/app

@@ -1,5 +1,5 @@
 """
-WSGI config for DevHub project.
+WSGI config for devhub project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

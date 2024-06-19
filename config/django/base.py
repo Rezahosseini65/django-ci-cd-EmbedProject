@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': env.db('DATABASE_URL', default='psql://user:123@456@127.0.0.1:5432/devhub'),
+    'default': env.db('DATABASE_URL', default='psql://devhub:123@456@127.0.0.1:5432/devhub'),
 }
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
@@ -89,7 +89,7 @@ if os.environ.get('GITHUB_WORKFLOW'):
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'github_actions',
-            'USER': 'user',
+            'USER': 'devhub',
             'PASSWORD': '123@456',
             'HOST': '127.0.0.1',
             'PORT': '5432',
